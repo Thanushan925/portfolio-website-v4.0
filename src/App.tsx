@@ -1,10 +1,14 @@
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Projects from "./sections/Projects";
+
 function App() {
   return (
-    <div className="flex-center" style={{ height: "100vh" }}>
-      <h1 style={{ color: "#44d62c", fontSize: "3rem" }}>
-        Portfolio Website V4.0
-      </h1>
-    </div>
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+    </main>
   );
 }
 
