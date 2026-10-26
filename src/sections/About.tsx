@@ -1,3 +1,5 @@
+import SectionTitle from "../components/SectionTitle";
+
 export default function About() {
 const birthDate = new Date(2002, 8, 1);
   const today = new Date();
@@ -14,11 +16,14 @@ const birthDate = new Date(2002, 8, 1);
   }
 
   return (
-    <section className="section">
+    <section id="about" className="section">
       <div className="container about-grid">
 
         <div className="about-left">
-          <h2 className="section-title">Driver Profile</h2>
+          <SectionTitle
+              themed="Driver Profile"
+              actual="About"
+          />
 
           <p className="about-text">
             Computer Science graduate focused on building reliable systems, strong fundamentals, and continuous improvement through Kaizen.

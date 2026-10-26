@@ -3,15 +3,19 @@ import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
 import type { Project } from "../data/projects";
+import SectionTitle from "../components/SectionTitle";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section className="section">
+    <section id="projects" className="section">
       <div className="container">
 
-        <h2 className="section-title">Race Results</h2>
+        <SectionTitle
+            themed="Race Results"
+            actual="Projects"
+        />
 
         <div className="projects-grid">
           {projects.map((project, i) => (
