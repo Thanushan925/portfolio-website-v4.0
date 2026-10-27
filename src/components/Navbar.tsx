@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -27,26 +28,48 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = links
+      .map((link) => document.getElementById(link.id))
+      .filter((section): section is HTMLElement => section !== null);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    let animationFrame = 0;
+
+    const updateActiveSection = () => {
+      cancelAnimationFrame(animationFrame);
+
+      animationFrame = requestAnimationFrame(() => {
+        const activationLine = window.innerHeight * 0.4;
+
+        let currentSection = sections[0];
+
+        for (const section of sections) {
+          const rect = section.getBoundingClientRect();
+
+          if (rect.top <= activationLine) {
+            currentSection = section;
+          } else {
+            break;
           }
-        });
-      },
-      {
-        threshold: 0.4,
-      }
-    );
+        }
 
-    sections.forEach((section) =>
-      observer.observe(section)
-    );
+        if (currentSection) {
+          setActiveSection(currentSection.id);
+        }
+      });
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateActiveSection);
+
+    updateActiveSection();
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+      cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   return (

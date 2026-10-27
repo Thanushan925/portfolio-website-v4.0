@@ -16,7 +16,6 @@ export const skillCategories: SkillCategory[] = [
       "Go",
     ],
   },
-
   {
     title: "🌐 Web & Mobile",
     skills: [
@@ -29,7 +28,6 @@ export const skillCategories: SkillCategory[] = [
       "CSS3",
     ],
   },
-
   {
     title: "🤖 AI Systems",
     skills: [
@@ -42,7 +40,6 @@ export const skillCategories: SkillCategory[] = [
       "Conversational AI",
     ],
   },
-
   {
     title: "🗄️ Databases",
     skills: [
@@ -53,7 +50,6 @@ export const skillCategories: SkillCategory[] = [
       "Mongoose",
     ],
   },
-
   {
     title: "🛠️ Developer Tools",
     skills: [
@@ -66,7 +62,14 @@ export const skillCategories: SkillCategory[] = [
       "Android Studio",
     ],
   },
-
+  {
+    title: "📊 Data & Analytics",
+    skills: [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+    ],
+  },
   {
     title: "🎬 Creative Systems",
     skills: [

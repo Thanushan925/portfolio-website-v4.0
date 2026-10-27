@@ -11,7 +11,10 @@ export default function TelemetryBar() {
         document.documentElement.scrollHeight -
         window.innerHeight;
 
-      const percent = (scrollTop / docHeight) * 100;
+      const percent =
+        docHeight > 0
+          ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100))
+          : 0;
 
       setProgress(percent);
     };

@@ -1,52 +1,39 @@
 import SectionTitle from "../components/SectionTitle";
 
 export default function About() {
-const birthDate = new Date(2002, 8, 1);
-  const today = new Date();
-
-  let age = today.getFullYear() - birthDate.getFullYear();
-
-  const hasHadBirthdayThisYear =
-    today.getMonth() > birthDate.getMonth() ||
-    (today.getMonth() === birthDate.getMonth() &&
-      today.getDate() >= birthDate.getDate());
-
-  if (!hasHadBirthdayThisYear) {
-    age--;
-  }
-
   return (
     <section id="about" className="section">
       <div className="container about-grid">
-
         <div className="about-left">
           <SectionTitle
-              themed="Driver Profile"
-              actual="About"
+            themed="Driver Profile"
+            actual="About"
           />
 
           <p className="about-text">
-            Computer Science graduate focused on building reliable systems, strong fundamentals, and continuous improvement through Kaizen.
+            Computer Science graduate focused on building reliable systems,
+            strong fundamentals, and continuous improvement through Kaizen.
           </p>
         </div>
 
         <div className="about-right">
           <div className="stat-card">
-            <p className="stat-label">XP Level</p>
-            <p className="stat-value">{age}</p>
-          </div>
-
-          <div className="stat-card">
-            <p className="stat-label">Projects Completed</p>
-            <p className="stat-value">8+</p>
-          </div>
-
-          <div className="stat-card">
             <p className="stat-label">Focus</p>
-            <p className="stat-value">Full Stack</p>
+            <p className="stat-value">Software & AI</p>
+          </div>
+
+          <div className="stat-card">
+            <p className="stat-label">Education</p>
+            <p className="stat-value">Computer Science (Honours)</p>
+          </div>
+
+          <div className="stat-card">
+            <p className="stat-label">Off-Track Activities</p>
+            <p className="stat-value">
+              Filmmaking · Gaming · Storytelling
+            </p>
           </div>
         </div>
-
       </div>
     </section>
   );

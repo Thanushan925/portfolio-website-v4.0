@@ -13,8 +13,13 @@ export default function Hero() {
         <p className="hero-description">Computer Science graduate focused on building reliable software and continuously improving through the Kaizen philosophy.</p>
 
         <div className="hero-actions">
-          <Button>View Projects</Button>
-          <Button>Contact Me</Button>
+          <a href="#projects" className="btn">
+            View Projects
+          </a>
+
+          <a href="#contact" className="btn btn-secondary">
+            Contact Me
+          </a>
         </div>
 
       </div>
